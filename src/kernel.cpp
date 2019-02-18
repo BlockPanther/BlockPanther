@@ -18,6 +18,8 @@ typedef std::map<int, unsigned int> MapModifierCheckpoints;
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     boost::assign::map_list_of
         (0, 0x0e00670b)
+        (56, 0xe4a05527)
+        (113, 0x55640f7e)
 
     ;
 
