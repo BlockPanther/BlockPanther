@@ -245,8 +245,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/version.h \
     src/netbase.h \
     src/clientversion.h \
-	src/qt/chatwindow.h \
-	src/qt/serveur.h \
     src/bloom.h \
     src/checkqueue.h \
     src/hash.h \
@@ -282,10 +280,8 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/aboutdialog.cpp \
     src/qt/editaddressdialog.cpp \
     src/qt/bitcoinaddressvalidator.cpp \
-	src/qt/chatwindow.cpp \
 	src/qt/statisticspage.cpp \
 	src/qt/blockbrowser.cpp \
-	src/qt/serveur.cpp \
     src/alert.cpp \
     src/version.cpp \
     src/sync.cpp \
@@ -360,7 +356,6 @@ FORMS += \
     src/qt/forms/rpcconsole.ui \
 	src/qt/forms/statisticspage.ui \
 	src/qt/forms/blockbrowser.ui \
-	src/qt/forms/chatwindow.ui \
     src/qt/forms/optionsdialog.ui
 
 contains(USE_QRCODE, 1) {
