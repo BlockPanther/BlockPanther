@@ -4,9 +4,9 @@ VERSION = 1.0
 INCLUDEPATH += src src/json src/qt
 QT += core gui network
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
-CONFIG += no_include_pwd
-CONFIG += thread
-CONFIG += static
+CONFIG += NO_INCLUDE_PWD
+CONFIG += THREAD
+CONFIG += STATIC
 
 QMAKE_CXXFLAGS = -fpermissive
 
@@ -240,7 +240,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/allocators.h \
     src/ui_interface.h \
     src/qt/rpcconsole.h \
-	src/qt/blockbrowser.h \
 	src/qt/statisticspage.h \
     src/version.h \
     src/netbase.h \
@@ -281,7 +280,6 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/editaddressdialog.cpp \
     src/qt/bitcoinaddressvalidator.cpp \
 	src/qt/statisticspage.cpp \
-	src/qt/blockbrowser.cpp \
     src/alert.cpp \
     src/version.cpp \
     src/sync.cpp \
@@ -355,7 +353,6 @@ FORMS += \
     src/qt/forms/askpassphrasedialog.ui \
     src/qt/forms/rpcconsole.ui \
 	src/qt/forms/statisticspage.ui \
-	src/qt/forms/blockbrowser.ui \
     src/qt/forms/optionsdialog.ui
 
 contains(USE_QRCODE, 1) {
