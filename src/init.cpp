@@ -259,6 +259,7 @@ std::string HelpMessage()
         "  -bantime=<n>           " + _("Number of seconds to keep misbehaving peers from reconnecting (default: 86400)") + "\n" +
         "  -maxreceivebuffer=<n>  " + _("Maximum per-connection receive buffer, <n>*1000 bytes (default: 5000)") + "\n" +
         "  -maxsendbuffer=<n>     " + _("Maximum per-connection send buffer, <n>*1000 bytes (default: 1000)") + "\n" +
+        "  -zapwallettxes         " + _("Clear orphan wallet transactions (implies -rescan)") + "\n" +
 #ifdef USE_UPNP
 #if USE_UPNP
         "  -upnp                  " + _("Use UPnP to map the listening port (default: 1 when listening)") + "\n" +
@@ -420,6 +421,11 @@ bool AppInit2()
     if (GetBoolArg("-salvagewallet")) {
         // Rewrite just private keys: rescan to find transactions
         SoftSetBoolArg("-rescan", true);
+    }
+
+    if (GetBoolArg("-zapwallettxes", false)) {
+        if (SoftSetBoolArg("-rescan", true))
+            { /* zapwallettxes implies rescan */ }
     }
 
     // ********************************************************* Step 3: parameter-to-internal-flags
@@ -833,6 +839,18 @@ bool AppInit2()
         pwalletMain->ScanForWalletTransactions(pindexRescan, true);
         printf(" rescan      %15"PRId64"ms\n", GetTimeMillis() - nStart);
     }
+
+    if (GetBoolArg("-zapwallettxes", false)) {
+         uiInterface.InitMessage(_("Zapping all transactions from wallet..."));
+         pwalletMain = new CWallet("wallet.dat");
+         DBErrors nZapWalletRet = pwalletMain->ZapWalletTx();
+         if (nZapWalletRet != DB_LOAD_OK) {
+             uiInterface.InitMessage(_("Error loading wallet.dat: Wallet corrupted"));
+             return false;
+         }
+         delete pwalletMain;
+         pwalletMain = NULL;
+}
 
     // ********************************************************* Step 9: import blocks
 
