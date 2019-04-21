@@ -1142,6 +1142,13 @@ static const char *strDNSSeed[][2] = {
     {"Block-Panther", "104.248.136.3"},
     {"Block-Panther1", "77.99.174.201"},
     {"Block-Panther2", "70.174.228.178"},
+    {"Block-Panther3", "167.99.195.254"},
+    {"Block-Panther4", "39.104.92.151"},
+    {"Block-Panther5", "68.97.51.122"},
+    {"Block-Panther6", "185.50.24.206"},
+    {"Block-Panther7", "217.25.227.97"},
+    {"Block-Panther8", "99.246.28.55"},
+
 };
 
 void ThreadDNSAddressSeed(void* parg)
