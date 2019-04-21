@@ -154,51 +154,15 @@ Linux Daemon: https://github.com/BlockPanther/Wallets/blob/master/Linux
 # External Links
 
 
-Website: being Re Constructed again.
+Website: https://blockpanther.live
 
-Block Explorer: http://104.248.136.3:3001
+Block Explorer: http://167.99.195.254:3001
 
 Discord: https://discord.gg/vcF2Qss
 
 Twitter: https://twitter.com/BlockPanther2
 
 CoinHub: https://coinhub.news/cs/article/bitcointalk-newann-block-panther-x14-powpos-hybrid-fast-reliable-secure-annnew
-
-
-
-# Mining Pools
-
-
-https://thecryptominerpool.com/
-
-https://s2.mpos-pools.com/bpn
-
-https://pool.rig.tokyo/
-
-https://www.0769.it/
-
-https://www.pow-coin.com/site/mining
-
-https://thepool.life/
-
-
-
-# Solo Mining
-
-create a file and name it "BlockPanther.conf"
-
-Place the contents below into BlockPanther.conf and modify the user & password section
-Code:
-rpcuser=user
-rpcpassword=password
-rpcallowip=127.0.0.1
-rpcport=13960
-port=13961
-listen=1
-server=1
-daemon=1
-then save it in AppData/Roaming/BlockPanther if Windows, if on Linux then it would be placed in here ~/.BlockPanther
-once done all you need to do is open Block Panther Client and point your miner to it
 
 
 # Exchanges
