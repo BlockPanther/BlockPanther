@@ -3,6 +3,21 @@
 Block Panther
 Fast, Reliable & Secure
 
+# READ ME!!! 
+
+PassPhrase has been renamed to Password.
+
+This will now require users who use API & Daemons of BlockPanther to adjust to this change and will need to now use 
+
+password "PASSWORD_HERE"
+
+and no longer
+
+passphrase "PASSWORD_HERE"
+
+
+API Commands will have to be adjusted to calling "password" rather than "passphrase" now.
+
 
 # General Build Information
 
