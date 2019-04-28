@@ -149,9 +149,9 @@ public:
     bool AddCScript(const CScript& redeemScript);
     bool LoadCScript(const CScript& redeemScript) { return CCryptoKeyStore::AddCScript(redeemScript); }
 
-    bool Unlock(const SecureString& strWalletPassphrase);
-    bool ChangeWalletPassphrase(const SecureString& strOldWalletPassphrase, const SecureString& strNewWalletPassphrase);
-    bool EncryptWallet(const SecureString& strWalletPassphrase);
+    bool Unlock(const SecureString& strWalletPassword);
+    bool ChangeWalletPassword(const SecureString& strOldWalletPassword, const SecureString& strNewWalletPassword);
+    bool EncryptWallet(const SecureString& strWalletPassword);
 
     void GetKeyBirthTimes(std::map<CKeyID, int64_t> &mapKeyBirth) const;
 

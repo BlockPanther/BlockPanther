@@ -340,7 +340,7 @@ Value signrawtransaction(const Array& params, bool fHelp)
             "Returns json object with keys:\n"
             "  hex : raw transaction with signature(s) (hex-encoded string)\n"
             "  complete : 1 if transaction has a complete set of signature (0 if not)"
-            + HelpRequiringPassphrase());
+            + HelpRequiringPassword());
 
     RPCTypeCheck(params, list_of(str_type)(array_type)(array_type)(str_type), true);
 

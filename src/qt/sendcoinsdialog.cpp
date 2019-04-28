@@ -11,7 +11,7 @@
 #include "optionsmodel.h"
 #include "sendcoinsentry.h"
 #include "guiutil.h"
-#include "askpassphrasedialog.h"
+#include "askpassworddialog.h"
 
 #include "coincontrol.h"
 #include "coincontroldialog.h"

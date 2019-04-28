@@ -154,26 +154,26 @@ Ing produktung ini atin yang makayabeng software a gewa dareng OpenSSL Project p
     </message>
 </context>
 <context>
-    <name>AskPassphraseDialog</name>
+    <name>AskPasswordDialog</name>
     <message>
-        <location filename="../forms/askpassphrasedialog.ui" line="+26"/>
-        <source>Passphrase Dialog</source>
-        <translation>Dialogo ning Passphrase</translation>
+        <location filename="../forms/askpassworddialog.ui" line="+26"/>
+        <source>Password Dialog</source>
+        <translation>Dialogo ning Password</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Enter passphrase</source>
-        <translation>Mamalub kang passphrase</translation>
+        <source>Enter password</source>
+        <translation>Mamalub kang password</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>New passphrase</source>
-        <translation>Panibayung passphrase</translation>
+        <source>New password</source>
+        <translation>Panibayung password</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Repeat new passphrase</source>
-        <translation>Pasibayuan ya ing bayung passphrase</translation>
+        <source>Repeat new password</source>
+        <translation>Pasibayuan ya ing bayung password</translation>
     </message>
     <message>
         <location line="+33"/>
@@ -186,9 +186,9 @@ Ing produktung ini atin yang makayabeng software a gewa dareng OpenSSL Project p
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+35"/>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Palub ye ing bayung passphrase king wallet.&lt;br/&gt;Maliari pu sanang gumamit kayung passphrase a maki&lt;/b&gt; 10 or dakal pang miyayaliuang characters&lt;/b&gt;, o ualu o dakal pang salita&lt;/b&gt;</translation>
+        <location filename="../askpassworddialog.cpp" line="+35"/>
+        <source>Enter the new password to the wallet.&lt;br/&gt;Please use a password of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
+        <translation>Palub ye ing bayung password king wallet.&lt;br/&gt;Maliari pu sanang gumamit kayung password a maki&lt;/b&gt; 10 or dakal pang miyayaliuang characters&lt;/b&gt;, o ualu o dakal pang salita&lt;/b&gt;</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -197,8 +197,8 @@ Ing produktung ini atin yang makayabeng software a gewa dareng OpenSSL Project p
     </message>
     <message>
         <location line="+7"/>
-        <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>Ing operasyun a ini kailangan ne ing kekayung wallet passphrase, ban a-unlock ya ing wallet</translation>
+        <source>This operation needs your wallet password to unlock the wallet.</source>
+        <translation>Ing operasyun a ini kailangan ne ing kekayung wallet password, ban a-unlock ya ing wallet</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -207,8 +207,8 @@ Ing produktung ini atin yang makayabeng software a gewa dareng OpenSSL Project p
     </message>
     <message>
         <location line="+3"/>
-        <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
-        <translation>Ing operasyun a ini kailangan ne ing kekang wallet passphrase ban a-decrypt ne ing wallet.</translation>
+        <source>This operation needs your wallet password to decrypt the wallet.</source>
+        <translation>Ing operasyun a ini kailangan ne ing kekang wallet password ban a-decrypt ne ing wallet.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -217,13 +217,13 @@ Ing produktung ini atin yang makayabeng software a gewa dareng OpenSSL Project p
     </message>
     <message>
         <location line="+3"/>
-        <source>Change passphrase</source>
-        <translation>Alilan ya ing passphrase</translation>
+        <source>Change password</source>
+        <translation>Alilan ya ing password</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Enter the old and new passphrase to the wallet.</source>
-        <translation>Palub ye ing luma ampo ing bayung passphrase king wallet.</translation>
+        <source>Enter the old and new password to the wallet.</source>
+        <translation>Palub ye ing luma ampo ing bayung password king wallet.</translation>
     </message>
     <message>
         <location line="+46"/>
@@ -232,7 +232,7 @@ Ing produktung ini atin yang makayabeng software a gewa dareng OpenSSL Project p
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your password, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -278,8 +278,8 @@ Ing produktung ini atin yang makayabeng software a gewa dareng OpenSSL Project p
     <message>
         <location line="+7"/>
         <location line="+50"/>
-        <source>The supplied passphrases do not match.</source>
-        <translation>E la mitutugma ring mibieng passphrase</translation>
+        <source>The supplied passwords do not match.</source>
+        <translation>E la mitutugma ring mibieng password</translation>
     </message>
     <message>
         <location line="-38"/>
@@ -290,8 +290,8 @@ Ing produktung ini atin yang makayabeng software a gewa dareng OpenSSL Project p
         <location line="+1"/>
         <location line="+12"/>
         <location line="+19"/>
-        <source>The passphrase entered for the wallet decryption was incorrect.</source>
-        <translation>E ya istu ing passphrase a pepalub da para king wallet decryption</translation>
+        <source>The password entered for the wallet decryption was incorrect.</source>
+        <translation>E ya istu ing password a pepalub da para king wallet decryption</translation>
     </message>
     <message>
         <location line="-20"/>
@@ -300,8 +300,8 @@ Ing produktung ini atin yang makayabeng software a gewa dareng OpenSSL Project p
     </message>
     <message>
         <location line="+14"/>
-        <source>Wallet passphrase was successfully changed.</source>
-        <translation>Mi-alilan ne ing passphrase na ning wallet.</translation>
+        <source>Wallet password was successfully changed.</source>
+        <translation>Mi-alilan ne ing password na ning wallet.</translation>
     </message>
 </context>
 <context>
@@ -403,8 +403,8 @@ Ing produktung ini atin yang makayabeng software a gewa dareng OpenSSL Project p
     </message>
     <message>
         <location line="+2"/>
-        <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Alilan ing Passphrase...</translation>
+        <source>&amp;Change Password...</source>
+        <translation>&amp;Alilan ing Password...</translation>
     </message>
     <message numerus="yes">
         <location line="+259"/>
@@ -448,8 +448,8 @@ Ing produktung ini atin yang makayabeng software a gewa dareng OpenSSL Project p
     </message>
     <message>
         <location line="+2"/>
-        <source>Change the passphrase used for wallet encryption</source>
-        <translation>Alilan ya ing passphrase a gagamitan para king wallet encryption</translation>
+        <source>Change the password used for wallet encryption</source>
+        <translation>Alilan ya ing password a gagamitan para king wallet encryption</translation>
     </message>
     <message>
         <location line="+10"/>

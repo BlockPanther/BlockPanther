@@ -158,25 +158,25 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
 </context>
 <context>
-    <name>AskPassphraseDialog</name>
+    <name>AskPasswordDialog</name>
     <message>
-        <location filename="../forms/askpassphrasedialog.ui" line="+26"/>
-        <source>Passphrase Dialog</source>
+        <location filename="../forms/askpassworddialog.ui" line="+26"/>
+        <source>Password Dialog</source>
         <translation>Dialogul pentru fraza de acces</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Enter passphrase</source>
+        <source>Enter password</source>
         <translation>Introdu fraza de acces</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>New passphrase</source>
+        <source>New password</source>
         <translation>Frază de acces nouă</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Repeat new passphrase</source>
+        <source>Repeat new password</source>
         <translation>Repetă noua frază de acces</translation>
     </message>
     <message>
@@ -190,8 +190,8 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
         <translation>Doar pentru staking</translation>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+35"/>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
+        <location filename="../askpassworddialog.cpp" line="+35"/>
+        <source>Enter the new password to the wallet.&lt;br/&gt;Please use a password of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
         <translation>Introdu noua parolă a portofelului electronic.&lt;br/&gt;Te rog folosește &lt;b&gt;minim 10 caractere aleatoare&lt;/b&gt;, sau &lt;b&gt;minim 8 cuvinte&lt;/b&gt;.</translation>
     </message>
     <message>
@@ -201,7 +201,7 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="+7"/>
-        <source>This operation needs your wallet passphrase to unlock the wallet.</source>
+        <source>This operation needs your wallet password to unlock the wallet.</source>
         <translation>Această acțiune necesită fraza ta de acces pentru deblocarea portofelului.</translation>
     </message>
     <message>
@@ -211,7 +211,7 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="+3"/>
-        <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
+        <source>This operation needs your wallet password to decrypt the wallet.</source>
         <translation>Această acțiune necesită fraza ta de acces pentru decriptarea portofelului.</translation>
     </message>
     <message>
@@ -221,12 +221,12 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="+3"/>
-        <source>Change passphrase</source>
+        <source>Change password</source>
         <translation>Schimbă fraza de acces</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Enter the old and new passphrase to the wallet.</source>
+        <source>Enter the old and new password to the wallet.</source>
         <translation>Introdu vechea și noua parolă pentru portofel.</translation>
     </message>
     <message>
@@ -236,7 +236,7 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your password, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
         <translation>Atentie: Daca encriptezi portofelul si iti uiti parola, &lt;b&gt;VEI PIERDE TOATA MONEDELE&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -282,7 +282,7 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     <message>
         <location line="+7"/>
         <location line="+50"/>
-        <source>The supplied passphrases do not match.</source>
+        <source>The supplied passwords do not match.</source>
         <translation>Frazele de acces introduse nu se potrivesc.</translation>
     </message>
     <message>
@@ -294,7 +294,7 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
         <location line="+1"/>
         <location line="+12"/>
         <location line="+19"/>
-        <source>The passphrase entered for the wallet decryption was incorrect.</source>
+        <source>The password entered for the wallet decryption was incorrect.</source>
         <translation>Fraza de acces introdusă pentru decriptarea portofelului a fost incorectă.</translation>
     </message>
     <message>
@@ -304,7 +304,7 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="+14"/>
-        <source>Wallet passphrase was successfully changed.</source>
+        <source>Wallet password was successfully changed.</source>
         <translation>Parola portofelului electronic a fost schimbată.</translation>
     </message>
 </context>
@@ -407,7 +407,7 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="+2"/>
-        <source>&amp;Change Passphrase...</source>
+        <source>&amp;Change Password...</source>
         <translation>S&amp;chimbă parola...</translation>
     </message>
     <message numerus="yes">
@@ -452,7 +452,7 @@ Acest produs include programe dezvoltate de către OpenSSL Project pentru a fi f
     </message>
     <message>
         <location line="+2"/>
-        <source>Change the passphrase used for wallet encryption</source>
+        <source>Change the password used for wallet encryption</source>
         <translation>Schimbă fraza de acces folosită pentru criptarea portofelului</translation>
     </message>
     <message>

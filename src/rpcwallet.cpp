@@ -29,17 +29,17 @@ static void accountingDeprecationCheck()
         throw runtime_error("If you want to use accounting API, staking must be disabled, add to your config file staking=0\n");
 }
 
-std::string HelpRequiringPassphrase()
+std::string HelpRequiringPassword()
 {
     return pwalletMain->IsCrypted()
-        ? "\nrequires wallet passphrase to be set with walletpassphrase first"
+        ? "\nrequires wallet password to be set with walletpassword first"
         : "";
 }
 
 void EnsureWalletIsUnlocked()
 {
     if (pwalletMain->IsLocked())
-        throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
+        throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet password with walletpassword first.");
     if (fWalletUnlockStakingOnly)
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Wallet is unlocked for staking only.");
 }
@@ -301,7 +301,7 @@ Value sendtoaddress(const Array& params, bool fHelp)
         throw runtime_error(
             "sendtoaddress <BlockPantheraddress> <amount> [comment] [comment-to]\n"
             "<amount> is a real and is rounded to the nearest 0.000001"
-            + HelpRequiringPassphrase());
+            + HelpRequiringPassword());
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
@@ -318,7 +318,7 @@ Value sendtoaddress(const Array& params, bool fHelp)
         wtx.mapValue["to"]      = params[3].get_str();
 
     if (pwalletMain->IsLocked())
-        throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
+        throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet password with walletpassword first.");
 
     string strError = pwalletMain->SendMoneyToDestination(address.Get(), nAmount, wtx);
     if (strError != "")
@@ -664,7 +664,7 @@ Value sendfrom(const Array& params, bool fHelp)
         throw runtime_error(
             "sendfrom <fromaccount> <toBlockPantheraddress> <amount> [minconf=1] [comment] [comment-to]\n"
             "<amount> is a real and is rounded to the nearest 0.000001"
-            + HelpRequiringPassphrase());
+            + HelpRequiringPassword());
 
     string strAccount = AccountFromValue(params[0]);
     CBitcoinAddress address(params[1].get_str());
@@ -705,7 +705,7 @@ Value sendmany(const Array& params, bool fHelp)
         throw runtime_error(
             "sendmany <fromaccount> {address:amount,...} [minconf=1] [comment]\n"
             "amounts are double-precision floating point numbers"
-            + HelpRequiringPassphrase());
+            + HelpRequiringPassword());
 
     string strAccount = AccountFromValue(params[0]);
     Object sendTo = params[1].get_obj();
@@ -1348,7 +1348,7 @@ Value keypoolrefill(const Array& params, bool fHelp)
         throw runtime_error(
             "keypoolrefill [new-size]\n"
             "Fills the keypool."
-            + HelpRequiringPassphrase());
+            + HelpRequiringPassword());
 
     unsigned int nSize = max(GetArg("-keypool", 100), (int64_t)0);
     if (params.size() > 0) {
@@ -1376,7 +1376,7 @@ void ThreadTopUpKeyPool(void* parg)
     pwalletMain->TopUpKeyPool();
 }
 
-void ThreadCleanWalletPassphrase(void* parg)
+void ThreadCleanWalletPassword(void* parg)
 {
     // Make this thread recognisable as the wallet relocking thread
     RenameThread("BlockPanther-lock-wa");
@@ -1420,21 +1420,21 @@ void ThreadCleanWalletPassphrase(void* parg)
     delete (int64_t*)parg;
 }
 
-Value walletpassphrase(const Array& params, bool fHelp)
+Value walletpassword(const Array& params, bool fHelp)
 {
     if (pwalletMain->IsCrypted() && (fHelp || params.size() < 2 || params.size() > 3))
         throw runtime_error(
-            "walletpassphrase <passphrase> <timeout> [stakingonly]\n"
+            "walletpassword <password> <timeout> [stakingonly]\n"
             "Stores the wallet decryption key in memory for <timeout> seconds.\n"
             "if [stakingonly] is true sending functions are disabled.");
     if (fHelp)
         return true;
     if (!pwalletMain->IsCrypted())
-        throw JSONRPCError(RPC_WALLET_WRONG_ENC_STATE, "Error: running with an unencrypted wallet, but walletpassphrase was called.");
+        throw JSONRPCError(RPC_WALLET_WRONG_ENC_STATE, "Error: running with an unencrypted wallet, but walletpassword was called.");
 
     if (!pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_ALREADY_UNLOCKED, "Error: Wallet is already unlocked, use walletlock first if need to change unlock settings.");
-    // Note that the walletpassphrase is stored in params[0] which is not mlock()ed
+    // Note that the walletpassword is stored in params[0] which is not mlock()ed
     SecureString strWalletPass;
     strWalletPass.reserve(100);
     // TODO: get rid of this .c_str() by implementing SecureString::operator=(std::string)
@@ -1444,16 +1444,16 @@ Value walletpassphrase(const Array& params, bool fHelp)
     if (strWalletPass.length() > 0)
     {
         if (!pwalletMain->Unlock(strWalletPass))
-            throw JSONRPCError(RPC_WALLET_PASSPHRASE_INCORRECT, "Error: The wallet passphrase entered was incorrect.");
+            throw JSONRPCError(RPC_WALLET_PASSWORD_INCORRECT, "Error: The wallet password entered was incorrect.");
     }
     else
         throw runtime_error(
-            "walletpassphrase <passphrase> <timeout>\n"
+            "walletpassword <password> <timeout>\n"
             "Stores the wallet decryption key in memory for <timeout> seconds.");
 
     NewThread(ThreadTopUpKeyPool, NULL);
     int64_t* pnSleepTime = new int64_t(params[1].get_int64());
-    NewThread(ThreadCleanWalletPassphrase, pnSleepTime);
+    NewThread(ThreadCleanWalletPassword, pnSleepTime);
 
     // ppcoin: if user OS account compromised prevent trivial sendmoney commands
     if (params.size() > 2)
@@ -1465,16 +1465,16 @@ Value walletpassphrase(const Array& params, bool fHelp)
 }
 
 
-Value walletpassphrasechange(const Array& params, bool fHelp)
+Value walletpasswordchange(const Array& params, bool fHelp)
 {
     if (pwalletMain->IsCrypted() && (fHelp || params.size() != 2))
         throw runtime_error(
-            "walletpassphrasechange <oldpassphrase> <newpassphrase>\n"
-            "Changes the wallet passphrase from <oldpassphrase> to <newpassphrase>.");
+            "walletpasswordchange <oldpassword> <newpassword>\n"
+            "Changes the wallet password from <oldpassword> to <newpassword>.");
     if (fHelp)
         return true;
     if (!pwalletMain->IsCrypted())
-        throw JSONRPCError(RPC_WALLET_WRONG_ENC_STATE, "Error: running with an unencrypted wallet, but walletpassphrasechange was called.");
+        throw JSONRPCError(RPC_WALLET_WRONG_ENC_STATE, "Error: running with an unencrypted wallet, but walletpasswordchange was called.");
 
     // TODO: get rid of these .c_str() calls by implementing SecureString::operator=(std::string)
     // Alternately, find a way to make params[0] mlock()'d to begin with.
@@ -1488,11 +1488,11 @@ Value walletpassphrasechange(const Array& params, bool fHelp)
 
     if (strOldWalletPass.length() < 1 || strNewWalletPass.length() < 1)
         throw runtime_error(
-            "walletpassphrasechange <oldpassphrase> <newpassphrase>\n"
-            "Changes the wallet passphrase from <oldpassphrase> to <newpassphrase>.");
+            "walletpasswordchange <oldpassword> <newpassword>\n"
+            "Changes the wallet password from <oldpassword> to <newpassword>.");
 
-    if (!pwalletMain->ChangeWalletPassphrase(strOldWalletPass, strNewWalletPass))
-        throw JSONRPCError(RPC_WALLET_PASSPHRASE_INCORRECT, "Error: The wallet passphrase entered was incorrect.");
+    if (!pwalletMain->ChangeWalletPassword(strOldWalletPass, strNewWalletPass))
+        throw JSONRPCError(RPC_WALLET_PASSWORD_INCORRECT, "Error: The wallet password entered was incorrect.");
 
     return Value::null;
 }
@@ -1504,7 +1504,7 @@ Value walletlock(const Array& params, bool fHelp)
         throw runtime_error(
             "walletlock\n"
             "Removes the wallet encryption key from memory, locking the wallet.\n"
-            "After calling this method, you will need to call walletpassphrase again\n"
+            "After calling this method, you will need to call walletpassword again\n"
             "before being able to call any methods which require the wallet to be unlocked.");
     if (fHelp)
         return true;
@@ -1525,8 +1525,8 @@ Value encryptwallet(const Array& params, bool fHelp)
 {
     if (!pwalletMain->IsCrypted() && (fHelp || params.size() != 1))
         throw runtime_error(
-            "encryptwallet <passphrase>\n"
-            "Encrypts the wallet with <passphrase>.");
+            "encryptwallet <password>\n"
+            "Encrypts the wallet with <password>.");
     if (fHelp)
         return true;
     if (pwalletMain->IsCrypted())
@@ -1540,8 +1540,8 @@ Value encryptwallet(const Array& params, bool fHelp)
 
     if (strWalletPass.length() < 1)
         throw runtime_error(
-            "encryptwallet <passphrase>\n"
-            "Encrypts the wallet with <passphrase>.");
+            "encryptwallet <password>\n"
+            "Encrypts the wallet with <password>.");
 
     if (!pwalletMain->EncryptWallet(strWalletPass))
         throw JSONRPCError(RPC_WALLET_ENCRYPTION_FAILED, "Error: Failed to encrypt the wallet.");

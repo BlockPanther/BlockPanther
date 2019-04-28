@@ -59,8 +59,8 @@ enum RPCErrorCode
     RPC_WALLET_INSUFFICIENT_FUNDS   = -6,  // Not enough funds in wallet or account
     RPC_WALLET_INVALID_ACCOUNT_NAME = -11, // Invalid account name
     RPC_WALLET_KEYPOOL_RAN_OUT      = -12, // Keypool ran out, call keypoolrefill first
-    RPC_WALLET_UNLOCK_NEEDED        = -13, // Enter the wallet passphrase with walletpassphrase first
-    RPC_WALLET_PASSPHRASE_INCORRECT = -14, // The wallet passphrase entered was incorrect
+    RPC_WALLET_UNLOCK_NEEDED        = -13, // Enter the wallet password with walletpassword first
+    RPC_WALLET_PASSWORD_INCORRECT   = -14, // The wallet password entered was incorrect
     RPC_WALLET_WRONG_ENC_STATE      = -15, // Command given in wrong wallet encryption state (encrypting an encrypted wallet etc.)
     RPC_WALLET_ENCRYPTION_FAILED    = -16, // Failed to encrypt the wallet
     RPC_WALLET_ALREADY_UNLOCKED     = -17, // Wallet is already unlocked
@@ -132,7 +132,7 @@ extern double GetPoWMHashPS();
 extern double GetPoSKernelPS();
 
 extern std::string HexBits(unsigned int nBits);
-extern std::string HelpRequiringPassphrase();
+extern std::string HelpRequiringPassword();
 extern void EnsureWalletIsUnlocked();
 
 //
@@ -186,8 +186,8 @@ extern json_spirit::Value listsinceblock(const json_spirit::Array& params, bool 
 extern json_spirit::Value gettransaction(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value backupwallet(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value keypoolrefill(const json_spirit::Array& params, bool fHelp);
-extern json_spirit::Value walletpassphrase(const json_spirit::Array& params, bool fHelp);
-extern json_spirit::Value walletpassphrasechange(const json_spirit::Array& params, bool fHelp);
+extern json_spirit::Value walletpassword(const json_spirit::Array& params, bool fHelp);
+extern json_spirit::Value walletpasswordchange(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value walletlock(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value encryptwallet(const json_spirit::Array& params, bool fHelp);
 extern json_spirit::Value validateaddress(const json_spirit::Array& params, bool fHelp);

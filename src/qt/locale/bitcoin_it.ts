@@ -156,26 +156,26 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
     </message>
 </context>
 <context>
-    <name>AskPassphraseDialog</name>
+    <name>AskPasswordDialog</name>
     <message>
-        <location filename="../forms/askpassphrasedialog.ui" line="+26"/>
-        <source>Passphrase Dialog</source>
-        <translation>Finestra passphrase</translation>
+        <location filename="../forms/askpassworddialog.ui" line="+26"/>
+        <source>Password Dialog</source>
+        <translation>Finestra password</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Enter passphrase</source>
-        <translation>Inserisci la passphrase</translation>
+        <source>Enter password</source>
+        <translation>Inserisci la password</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>New passphrase</source>
-        <translation>Nuova passphrase</translation>
+        <source>New password</source>
+        <translation>Nuova password</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Repeat new passphrase</source>
-        <translation>Ripeti la passphrase</translation>
+        <source>Repeat new password</source>
+        <translation>Ripeti la password</translation>
     </message>
     <message>
         <location line="+33"/>
@@ -188,9 +188,9 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../askpassphrasedialog.cpp" line="+35"/>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Inserisci la passphrase per il portamonete.&lt;br/&gt;Per piacere usare unapassphrase di &lt;b&gt;10 o più caratteri casuali&lt;/b&gt;, o &lt;b&gt;otto o più parole&lt;/b&gt;.</translation>
+        <location filename="../askpassworddialog.cpp" line="+35"/>
+        <source>Enter the new password to the wallet.&lt;br/&gt;Please use a password of &lt;b&gt;10 or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
+        <translation>Inserisci la password per il portamonete.&lt;br/&gt;Per piacere usare unapassword di &lt;b&gt;10 o più caratteri casuali&lt;/b&gt;, o &lt;b&gt;otto o più parole&lt;/b&gt;.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -199,8 +199,8 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
     </message>
     <message>
         <location line="+7"/>
-        <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>Quest&apos;operazione necessita della passphrase per sbloccare il portamonete.</translation>
+        <source>This operation needs your wallet password to unlock the wallet.</source>
+        <translation>Quest&apos;operazione necessita della password per sbloccare il portamonete.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -209,8 +209,8 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
     </message>
     <message>
         <location line="+3"/>
-        <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
-        <translation>Quest&apos;operazione necessita della passphrase per decifrare il portamonete,</translation>
+        <source>This operation needs your wallet password to decrypt the wallet.</source>
+        <translation>Quest&apos;operazione necessita della password per decifrare il portamonete,</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -219,13 +219,13 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
     </message>
     <message>
         <location line="+3"/>
-        <source>Change passphrase</source>
-        <translation>Cambia la passphrase</translation>
+        <source>Change password</source>
+        <translation>Cambia la password</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Enter the old and new passphrase to the wallet.</source>
-        <translation>Inserisci la vecchia e la nuova passphrase per il portamonete.</translation>
+        <source>Enter the old and new password to the wallet.</source>
+        <translation>Inserisci la vecchia e la nuova password per il portamonete.</translation>
     </message>
     <message>
         <location line="+46"/>
@@ -234,7 +234,7 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your password, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -280,8 +280,8 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
     <message>
         <location line="+7"/>
         <location line="+50"/>
-        <source>The supplied passphrases do not match.</source>
-        <translation>Le passphrase inserite non corrispondono.</translation>
+        <source>The supplied passwords do not match.</source>
+        <translation>Le password inserite non corrispondono.</translation>
     </message>
     <message>
         <location line="-38"/>
@@ -292,8 +292,8 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
         <location line="+1"/>
         <location line="+12"/>
         <location line="+19"/>
-        <source>The passphrase entered for the wallet decryption was incorrect.</source>
-        <translation>La passphrase inserita per la decifrazione del portamonete è errata.</translation>
+        <source>The password entered for the wallet decryption was incorrect.</source>
+        <translation>La password inserita per la decifrazione del portamonete è errata.</translation>
     </message>
     <message>
         <location line="-20"/>
@@ -302,8 +302,8 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
     </message>
     <message>
         <location line="+14"/>
-        <source>Wallet passphrase was successfully changed.</source>
-        <translation>Passphrase del portamonete modificata con successo.</translation>
+        <source>Wallet password was successfully changed.</source>
+        <translation>Password del portamonete modificata con successo.</translation>
     </message>
 </context>
 <context>
@@ -405,8 +405,8 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
     </message>
     <message>
         <location line="+2"/>
-        <source>&amp;Change Passphrase...</source>
-        <translation>&amp;Cambia la passphrase...</translation>
+        <source>&amp;Change Password...</source>
+        <translation>&amp;Cambia la password...</translation>
     </message>
     <message numerus="yes">
         <location line="+259"/>
@@ -450,8 +450,8 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
     </message>
     <message>
         <location line="+2"/>
-        <source>Change the passphrase used for wallet encryption</source>
-        <translation>Cambia la passphrase per la cifratura del portamonete</translation>
+        <source>Change the password used for wallet encryption</source>
+        <translation>Cambia la password per la cifratura del portamonete</translation>
     </message>
     <message>
         <location line="+10"/>

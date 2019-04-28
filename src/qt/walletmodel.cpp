@@ -267,12 +267,12 @@ WalletModel::EncryptionStatus WalletModel::getEncryptionStatus() const
     }
 }
 
-bool WalletModel::setWalletEncrypted(bool encrypted, const SecureString &passphrase)
+bool WalletModel::setWalletEncrypted(bool encrypted, const SecureString &password)
 {
     if(encrypted)
     {
         // Encrypt
-        return wallet->EncryptWallet(passphrase);
+        return wallet->EncryptWallet(password);
     }
     else
     {
@@ -281,7 +281,7 @@ bool WalletModel::setWalletEncrypted(bool encrypted, const SecureString &passphr
     }
 }
 
-bool WalletModel::setWalletLocked(bool locked, const SecureString &passPhrase)
+bool WalletModel::setWalletLocked(bool locked, const SecureString &passWord)
 {
     if(locked)
     {
@@ -291,17 +291,17 @@ bool WalletModel::setWalletLocked(bool locked, const SecureString &passPhrase)
     else
     {
         // Unlock
-        return wallet->Unlock(passPhrase);
+        return wallet->Unlock(passWord);
     }
 }
 
-bool WalletModel::changePassphrase(const SecureString &oldPass, const SecureString &newPass)
+bool WalletModel::changePassword(const SecureString &oldPass, const SecureString &newPass)
 {
     bool retval;
     {
         LOCK(wallet->cs_wallet);
         wallet->Lock(); // Make sure wallet is locked before attempting pass change
-        retval = wallet->ChangeWalletPassphrase(oldPass, newPass);
+        retval = wallet->ChangeWalletPassword(oldPass, newPass);
     }
     return retval;
 }
