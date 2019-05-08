@@ -99,20 +99,20 @@ SOURCES += src/txdb-leveldb.cpp \
     src/bloom.cpp \
     src/hash.cpp \
     src/aes_helper.c \
-    src/blake.c \
-    src/bmw.c \
-    src/cubehash.c \
-    src/echo.c \
-    src/groestl.c \
-    src/jh.c \
-    src/keccak.c \
-    src/luffa.c \
-    src/shavite.c \
-    src/simd.c \
-    src/skein.c \
-	src/fugue.c \
-	src/hamsi.c \
-	src/shabal.c 
+    src/algo/blake.c \
+    src/algo/bmw.c \
+    src/algo/cubehash.c \
+    src/algo/echo.c \
+    src/algo/groestl.c \
+    src/algo/jh.c \
+    src/algo/keccak.c \
+    src/algo/luffa.c \
+    src/algo/shavite.c \
+    src/algo/simd.c \
+    src/algo/skein.c \
+	src/algo/fugue.c \
+	src/algo/hamsi.c \
+	src/algo/shabal.c 
 
 !win32 {
     # we use QMAKE_CXXFLAGS_RELEASE even without RELEASE=1 because we use RELEASE to indicate linking preferences not -O preferences
@@ -249,21 +249,21 @@ HEADERS += src/qt/bitcoingui.h \
     src/hash.h \
     src/hashblock.h \
     src/limitedmap.h \
-    src/sph_blake.h \
-    src/sph_bmw.h \
-    src/sph_cubehash.h \
-    src/sph_echo.h \
-    src/sph_groestl.h \
-    src/sph_jh.h \
-    src/sph_keccak.h \
-    src/sph_luffa.h \
-    src/sph_shavite.h \
-    src/sph_simd.h \
-    src/sph_skein.h \
-	src/sph_fugue.h \
-	src/sph_hamsi.h \
-	src/sph_shabal.h \
-    src/sph_types.h \
+    src/algo/sph_blake.h \
+    src/algo/sph_bmw.h \
+    src/algo/sph_cubehash.h \
+    src/algo/sph_echo.h \
+    src/algo/sph_groestl.h \
+    src/algo/sph_jh.h \
+    src/algo/sph_keccak.h \
+    src/algo/sph_luffa.h \
+    src/algo/sph_shavite.h \
+    src/algo/sph_simd.h \
+    src/algo/sph_skein.h \
+	src/algo/sph_fugue.h \
+	src/algo/sph_hamsi.h \
+	src/algo/sph_shabal.h \
+    src/algo/sph_types.h \
     src/threadsafety.h \
     src/txdb-leveldb.h
 
