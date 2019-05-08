@@ -21,23 +21,23 @@ USE_UPNP:=-
 USE_IPV6:=1
 
 DEPSDIR?=/usr/local
-BOOST_SUFFIX?=-mgw48-mt-s-1_55
+BOOST_SUFFIX?=-mgw49-mt-s-1_57
 
 INCLUDEPATHS= \
  -I"$(CURDIR)" \
  -I"$(DEPSDIR)/include" \
- -I"c:/deps/boost_1_55_0" \
+ -I"c:/deps/boost_1_57_0" \
  -I"c:/deps/db-4.8.30.NC/build_unix" \
- -I"c:/deps/miniupnpc-1.8" \
- -I"c:/deps/openssl-1.0.1g/include"
+ -I"c:/deps/" \
+ -I"c:/deps/openssl-1.0.1l/include"
 
 LIBPATHS= \
  -L"$(CURDIR)/leveldb" \
  -L"$(DEPSDIR)/lib" \
- -L"c:/deps/boost_1_55_0/stage/lib" \
+ -L"c:/deps/boost_1_57_0/stage/lib" \
  -L"c:/deps/db-4.8.30.NC/build_unix" \
- -L"c:/deps/miniupnpc-1.8" \
- -L"c:/deps/openssl-1.0.1g"
+ -L"c:/deps/miniupnpc/" \
+ -L"c:/deps/openssl-1.0.1l/"
 
 LIBS= \
  -l leveldb \
@@ -62,8 +62,8 @@ ifndef USE_UPNP
 	override USE_UPNP = -
 endif
 ifneq (${USE_UPNP}, -)
- INCLUDEPATHS += -I"C:\miniupnpc-1.6-mgw"
- LIBPATHS += -L"C:\miniupnpc-1.6-mgw"
+ INCLUDEPATHS += -I"C:\deps\"
+ LIBPATHS += -L"C:\deps\miniupnpc"
  LIBS += -l miniupnpc -l iphlpapi
  DEFS += -DSTATICLIB -DUSE_UPNP=$(USE_UPNP)
 endif
@@ -78,20 +78,20 @@ LIBS += -l kernel32 -l user32 -l gdi32 -l comdlg32 -l winspool -l winmm -l shell
 HEADERS = $(wildcard *.h)
 
 OBJS= \
-    obj/groestl.o \
-    obj/blake.o \
-    obj/bmw.o \
-    obj/skein.o \
-    obj/keccak.o \
-    obj/shavite.o \
-    obj/jh.o \
-    obj/luffa.o \
-    obj/cubehash.o \
-    obj/echo.o \
-    obj/simd.o \
-	obj/hamsi.o \
-	obj/fugue.o \
-	obj/shabal.o\
+    obj/algo/groestl.o \
+    obj/algo/blake.o \
+    obj/algo/bmw.o \
+    obj/algo/skein.o \
+    obj/algo/keccak.o \
+    obj/algo/shavite.o \
+    obj/algo/jh.o \
+    obj/algo/luffa.o \
+    obj/algo/cubehash.o \
+    obj/algo/echo.o \
+    obj/algo/simd.o \
+    obj/algo/hamsi.o \
+    obj/algo/fugue.o \
+    obj/algo/shabal.o\
     obj/alert.o \
     obj/version.o \
     obj/checkpoints.o \

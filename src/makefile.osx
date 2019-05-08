@@ -63,6 +63,20 @@ CFLAGS += -Wall -Wextra -Wformat -Wno-ignored-qualifiers -Wformat-security -Wno-
     $(DEBUGFLAGS) $(DEFS) $(INCLUDEPATHS)
 
 OBJS= \
+    obj/algo/groestl.o \
+    obj/algo/blake.o \
+    obj/algo/bmw.o \
+    obj/algo/skein.o \
+    obj/algo/keccak.o \
+    obj/algo/shavite.o \
+    obj/algo/jh.o \
+    obj/algo/luffa.o \
+    obj/algo/cubehash.o \
+    obj/algo/echo.o \
+    obj/algo/simd.o \
+    obj/algo/hamsi.o \
+    obj/algo/fugue.o \
+    obj/algo/shabal.o\
     obj/alert.o \
     obj/version.o \
     obj/checkpoints.o \
