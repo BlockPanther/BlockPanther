@@ -1147,6 +1147,14 @@ static const char *strDNSSeed[][2] = {
     {"Block-Panther6", "185.50.24.206"},
     {"Block-Panther7", "217.25.227.97"},
     {"Block-Panther8", "99.246.28.55"},
+    {"Block-Panther9", "14.226.42.166"},
+    {"Block-Panther10", "160.179.207.39 "},
+    {"Block-Panther11", "37.248.158.197"},
+    {"Block-Panther12", "31.0.123.162"},
+    {"Block-Panther13", "27.187.122.146"},
+    {"Block-Panther14", "5.172.234.84"},
+    {"Block-Panther15", "41.143.183.68  "},
+    {"Block-Panther16", "105.155.222.185"},
 
 };
 
