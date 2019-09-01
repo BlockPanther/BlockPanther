@@ -1070,9 +1070,25 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
     {
         nSubsidy = 10 * COIN;
     }
-    else if(pindexBest->nHeight > 100000)
+    else if(pindexBest->nHeight < 550000)
     {
         nSubsidy = nCoinAge * nRewardCoinYear / 365 / COIN;
+    }
+    else if(pindexBest->nHeight < 560000)
+    {
+        nSubsidy = nCoinAge * nRewardCoinYear * 100 / 365 / COIN;
+    }
+    else if(pindexBest->nHeight < 570000)
+    {
+        nSubsidy = nCoinAge * nRewardCoinYear * 75 / 365 / COIN;
+    }
+    else if(pindexBest->nHeight < 580000)
+    {
+        nSubsidy = nCoinAge * nRewardCoinYear * 50 / 365 / COIN;
+    }
+    else if(pindexBest->nHeight < 590000)
+    {
+        nSubsidy = nCoinAge * nRewardCoinYear * 25 / 365 / COIN;
     }
 
     if (fDebug && GetBoolArg("-printcreation"))

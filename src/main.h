@@ -35,7 +35,7 @@ static const unsigned int MAX_INV_SZ = 50000;
 static const int64_t MIN_TX_FEE = 10000;
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 static const int64_t MAX_MONEY = 88000000000 * COIN; //88 Billion
-static const int64_t COIN_YEAR_REWARD = 20 * CENT; // 80% per year
+static const int64_t COIN_YEAR_REWARD = 20 * CENT; // 20% per year
 static const int64_t MAX_MINT_PROOF_OF_STAKE = 0.2 * COIN;	// 20% Annual PoS Interest
 static const int MODIFIER_INTERVAL_SWITCH = 10000; // PoS start block
 
