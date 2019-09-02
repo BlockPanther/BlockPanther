@@ -64,8 +64,7 @@ export LD_LIBRARY_PATH
 
 Name: Block Panther
 Ticker: BPN
-Algorithm: x14
-Type: PoW/PoS Hybrid untill block 100,000 then pure PoS after.
+Type: PoS.
 Max Block size: 100MB
 Drift Time: 10 minutes
 Maximum amount of Block-Panther: 88,000,000,000
@@ -75,34 +74,6 @@ Max Outbound connections: 32 Net Cons
 France
 Germany
 United Kingdom
-
-
-# Proof Of Work Information
-
-
-Block Time: 35 seconds
-Coinbase Maturity: 200 Blocks or 116 minutes max
-Modifier interval: 35 minutes
-Target timespan: 35 minutes
-Last PoW Block: 100,000
-
-
-# PoW Mining Structure
-
-
-Block 1 - 100: for developers
-Block 101 - 1000: 0 BPN per block
-Block 1,001 - 10,000: 100 BPN per block
-Block 10,001 - 20,000: 90 BPN per block
-Block 20,001 - 30,000: 80 BPN per block
-Block 30,001 - 40,000: 70 BPN per block
-Block 40,001 - 50,000: 60 BPN per block
-Block 50,001 - 60,000: 50 BPN per block
-Block 60,001 - 70,000: 40 BPN per block
-Block 70,001 - 80,000: 30 BPN per block
-Block 80,001 - 90,000: 20 BPN per block
-Block 90,001 - 100,000: 10 BPN per block
-
 
 
 # Proof Of Stake Information
@@ -140,7 +111,6 @@ Block 100,001 and after: 20% Interest Per year or 0.054% Daily Interest
 
 rpcport = 13960
 port = 13961
-
 
 
 # Transaction Information
@@ -181,8 +151,8 @@ CoinHub: https://coinhub.news/cs/article/bitcointalk-newann-block-panther-x14-po
 
 
 # Exchanges
-CREX24, Yobit, CoinExchange, STEX & WADAX messaged "Awaiting Reply"
-
+https://crex24.com/exchange/BPN-BTC
+https://pantherage.co.uk/market/BTC-BPN
 
 # Translations
 
